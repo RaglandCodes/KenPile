@@ -1,7 +1,0 @@
-[build]
-    publish = "client/build/"
-    command = "webpack --mode=production"
-
-[context.branch-dev]
-    publish = "client/build/"
-    command = "webpack --mode=production"
