@@ -1,0 +1,10 @@
+# https://devcenter.heroku.com/articles/heroku-yml-build-manifest
+# Officially unsupported, but works.
+#
+# web: go-getting-started may have to be changed to web: KenPile
+build:
+  languages:
+    - go
+
+run:
+  web: go-getting-started
