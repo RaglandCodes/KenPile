@@ -1,0 +1,21 @@
+name: CI for KenPile
+
+on: 
+  push:
+    branches: 
+      - dev
+
+jobs:
+  build:
+    name: Push to dev--heroku branch and keep only server directory
+    steps:
+      - name: Push to Heroku branch
+        uses: Automattic/action-commit-to-branch@master
+        with: 
+          branch: dev--heorku
+          commit_message: '👷 Dev Heroku'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+      
