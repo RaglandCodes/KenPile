@@ -1,0 +1,21 @@
+name: CI for KenPile Master
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs:
+  deploy:
+    name: Push server directory to master--heroku branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: master--heroku
+          FOLDER: server
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          

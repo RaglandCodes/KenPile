@@ -1,4 +1,4 @@
-name: CI for KenPile
+name: CI for KenPile Dev
 
 on: 
   push:
@@ -7,9 +7,10 @@ on:
 
 jobs:
   deploy:
-    name: Push to dev--heroku branch and keep only server directory
+    name: Push server directory to dev--heroku branch
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@master
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:
