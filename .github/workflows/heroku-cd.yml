@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     name: Push to dev--heroku branch and keep only server directory
+    runs-on: ubuntu-latest
     steps:
       - name: Push to Heroku branch
         uses: Automattic/action-commit-to-branch@master
