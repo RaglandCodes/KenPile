@@ -6,17 +6,14 @@ on:
       - dev
 
 jobs:
-  build:
+  deploy:
     name: Push to dev--heroku branch and keep only server directory
     runs-on: ubuntu-latest
     steps:
-      - name: Push to Heroku branch
-        uses: Automattic/action-commit-to-branch@master
-        with: 
-          branch: dev--heorku
-          commit_message: '👷 Dev Heroku'
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
         env:
+          REPO: self
+          BRANCH: dev--heroku
+          FOLDER: server
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-      
